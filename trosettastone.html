@@ -2072,7 +2072,7 @@ width:100%;
 <col style="width:1%;">
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2016-12-30)</strong></p></div>
+<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2016-12-31)</strong></p></div>
 <div class="paragraph"><p>Including Tomb Raider <span class="monospaced">.PHD/.TUB</span>, Tomb Raider II-III <span class="monospaced">.TR2</span>, Tomb Raider IV <span class="monospaced">.TR4</span> and Tomb Raider Chronicles (V) <span class="monospaced">.TRC</span> information, where available.</p></div>
 <div class="paragraph"><p>Also includes <span class="monospaced">TOMBPC.DAT</span> and <span class="monospaced">SCRIPT.TR4</span> script information, <span class="monospaced">CDAUDIO.WAD</span> and <span class="monospaced">CUTSEQ.PAK</span>/<span class="monospaced">CUTSEQ.BIN</span> information.</p></div></div></td>
 <td class="tableblock halign-right valign-middle" ><div><div class="paragraph"><p><span class="image">
@@ -2247,16 +2247,6 @@ Solve the purpose of <em>flag/zone</em> field in <a href="#tr_camera">[tr_camera
 <li>
 <p>
 What&#8217;s the purpose of bits 0-2 (mapping correction) in <em>flags</em> field in <a href="#tr4_object_texture">[tr4_object_texture]</a> structure?
-</p>
-</li>
-<li>
-<p>
-Clarify the box-overlap-zone relation in NPC behaviour section.
-</p>
-</li>
-<li>
-<p>
-Clarify flipeffects 31 and 33 for TR5.
 </p>
 </li>
 <li>
@@ -4686,7 +4676,7 @@ entity is active or not, and if it was already activated, it explodes instead of
 </div>
 </div>
 <div class="sect2">
-<h3 id="_trigger_types">4.5. Trigger types</h3>
+<h3 id="_trigger_types">4.5. Trigger Types</h3>
 <div class="paragraph"><p>A <em>trigger type</em> specifies the condition of a given <em>trigger function</em> to be activated. Condition may be a type of activator (Lara or some other entity), a
 specific state of activator, specific trigger action (activate or deactivate), and so on.</p></div>
 <div class="paragraph"><p>Trigger type <em>is placed in <span class="monospaced">SubFunction</span> field</em> of <span class="monospaced">FDSetup</span> structure, so we will refer to trigger types as <em>SubFunctions</em>.</p></div>
@@ -4819,7 +4809,7 @@ See-through body and joints are applied on top of the skeleton model with additi
 </div>
 </div>
 <div class="sect2">
-<h3 id="trigger_actions">4.6. Trigger actions</h3>
+<h3 id="trigger_actions">4.6. Trigger Actions</h3>
 <div class="paragraph"><p>Trigger function references an additional list of FloorData entries called <span class="monospaced">ActionList</span>, which is a &#8220;chain&#8221; of entries that immediately follows <span class="monospaced">TriggerSetup</span>
 entry. As you maybe already guessed, the <span class="monospaced">ActionList</span> contains the list of actions to be performed for a specified trigger.</p></div>
 <div class="paragraph"><p><span class="monospaced">ActionList</span> entry format is:</p></div>
@@ -7064,8 +7054,8 @@ width:100%;
 <td class="tableblock halign-center valign-top" ><p class="tableblock monospaced"><strong>STAIRS2SLOPE_FX</strong></p></td>
 <td class="tableblock halign-center valign-top" ><p class="tableblock monospaced">PISTON_FX</p></td>
 <td class="tableblock halign-center valign-top" ><p class="tableblock monospaced"><span class="red">PISTON_FX</span></p></td>
-<td class="tableblock halign-center valign-top" ><p class="tableblock monospaced">CROWBAR</p></td>
-<td class="tableblock halign-center valign-top" ><p class="tableblock monospaced">CROWBAR</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock monospaced">SWAP_CROWBAR</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock monospaced">SWAP_CROWBAR</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" ><p class="tableblock">9</p></td>
@@ -7249,7 +7239,7 @@ width:100%;
 <td class="tableblock halign-center valign-top" ><p class="tableblock monospaced">ASSAULT_FINISHED</p></td>
 <td class="tableblock halign-center valign-top" ><p class="tableblock monospaced">ASSAULT_FINISHED</p></td>
 <td class="tableblock halign-center valign-top" ><p class="tableblock monospaced">CLEARSCARABS</p></td>
-<td class="tableblock halign-center valign-top" ><p class="tableblock monospaced"><span class="purple">RESET_NPC_BUFFER (?)</span></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock monospaced">RESET_TEST (?)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" ><p class="tableblock">32</p></td>
@@ -7265,7 +7255,7 @@ width:100%;
 <td class="tableblock halign-center valign-top" ><p class="tableblock monospaced"></p></td>
 <td class="tableblock halign-center valign-top" ><p class="tableblock monospaced">ASSAULT_PENALTY_8</p></td>
 <td class="tableblock halign-center valign-top" ><p class="tableblock monospaced">-</p></td>
-<td class="tableblock halign-center valign-top" ><p class="tableblock monospaced"><span class="purple">KILLACTIVEBADDIES_2 (?)</span></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock monospaced">CLEAR_SPIDERS_PATCH (?)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" ><p class="tableblock">34</p></td>
@@ -7572,7 +7562,7 @@ width:100%;
 </li>
 <li>
 <p>
-<span class="monospaced">CROWBAR</span>&#8201;&#8212;&#8201;Swaps given entity&#8217;s mesh #10 index with same mesh&#8217;s index from <em>CROWBAR_ANIM</em> model (either model ID #246 in TR4, or model ID #240 in TR5). Calling this flipeffect again swaps mesh #10 back to native. Used primarily in cutscenes to create an illusion of Lara getting crowbar in her hand.
+<span class="monospaced">SWAP_CROWBAR</span>&#8201;&#8212;&#8201;Swaps given entity&#8217;s mesh #10 index with same mesh&#8217;s index from <em>CROWBAR_ANIM</em> model (either model ID #246 in TR4, or model ID #240 in TR5). Calling this flipeffect again swaps mesh #10 back to native. Used primarily in cutscenes to create an illusion of Lara getting crowbar in her hand.
 </p>
 </li>
 <li>
@@ -7632,12 +7622,12 @@ width:100%;
 </li>
 <li>
 <p>
-<span class="monospaced">KILLACTIVEBADDIES_2</span>&#8201;&#8212;&#8201;Present only in TR5. It seems it&#8217;s same as <span class="monospaced">KILLACTIVEBADDIES</span>, but some other processing is done.
+<span class="monospaced">CLEAR_SPIDERS_PATCH</span>&#8201;&#8212;&#8201;Present only in TR5. It seems it&#8217;s same as <span class="monospaced">KILLACTIVEBADDIES</span>, but some other processing is done. Never used in actual levels.
 </p>
 </li>
 <li>
 <p>
-<span class="monospaced">RESET_NPC_BUFFER</span>&#8201;&#8212;&#8201;No visible or significant effect on gameplay. If there are any NPCs in level, then this flipeffect will fill certain memory zone with zero bytes. This flipeffect seems like last-minute fix-up for some memory leak bug.
+<span class="monospaced">RESET_TEST</span>&#8201;&#8212;&#8201;Present only in TR5. No visible or significant effect on gameplay. If there are any NPCs in level, then this flipeffect will fill certain memory zone with zero bytes. This flipeffect seems like last-minute fix-up for some memory leak bug. Used in RICH1.TRC level (The 13th Floor)
 </p>
 </li>
 <li>
@@ -10032,7 +10022,7 @@ See you in TR5.... bwhahahah</pre>
 <div id="footnotes"><hr></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-12-30 03:02:40 MSK
+Last updated 2016-12-31 04:04:14 MSK
 </div>
 </div>
 </body>
