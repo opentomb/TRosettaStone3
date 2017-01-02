@@ -2072,7 +2072,7 @@ width:100%;
 <col style="width:1%;">
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2016-12-31)</strong></p></div>
+<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2017-01-02)</strong></p></div>
 <div class="paragraph"><p>Including Tomb Raider <span class="monospaced">.PHD/.TUB</span>, Tomb Raider II-III <span class="monospaced">.TR2</span>, Tomb Raider IV <span class="monospaced">.TR4</span> and Tomb Raider Chronicles (V) <span class="monospaced">.TRC</span> information, where available.</p></div>
 <div class="paragraph"><p>Also includes <span class="monospaced">TOMBPC.DAT</span> and <span class="monospaced">SCRIPT.TR4</span> script information, <span class="monospaced">CDAUDIO.WAD</span> and <span class="monospaced">CUTSEQ.PAK</span>/<span class="monospaced">CUTSEQ.BIN</span> information.</p></div></div></td>
 <td class="tableblock halign-right valign-middle" ><div><div class="paragraph"><p><span class="image">
@@ -7037,7 +7037,7 @@ width:100%;
 <td class="tableblock halign-left valign-top" ><p class="tableblock">6</p></td>
 <td class="tableblock halign-center valign-top" ><p class="tableblock monospaced"><strong>FLOOD_FX</strong></p></td>
 <td class="tableblock halign-center valign-top" ><p class="tableblock monospaced"><strong>CHANDELIER_FX</strong></p></td>
-<td class="tableblock halign-center valign-top" ><p class="tableblock monospaced"><span class="red"><strong>CHANDELIER_FX</strong></span></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock monospaced"><strong><span class="red">CHANDELIER_FX</span></strong></p></td>
 <td class="tableblock halign-center valign-top" ><p class="tableblock monospaced">ACTIVATE_KEY</p></td>
 <td class="tableblock halign-center valign-top" ><p class="tableblock monospaced">ACTIVATE_KEY</p></td>
 </tr>
@@ -10018,11 +10018,1027 @@ See you in TR5.... bwhahahah</pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="catalogues">15. Catalogues</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>This section contains reference catalogues of different game assets. Primarily it&#8217;s entity types, but in the future this section may be extended to include audiotracks, sound samples, animations, state numbers, and so on.</p></div>
+<div class="sect2">
+<h3 id="_entity_types">15.1. Entity Types</h3>
+<div class="paragraph"><p>There are some guidelines to entity table:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Pick-up items will be marked in <span class="blue">blue</span>.
+</p>
+</li>
+<li>
+<p>
+Nullmeshes (service entities with no render and collision) will be marked in <span class="red">red</span>.
+</p>
+</li>
+<li>
+<p>
+Helper entities never placed in map (e.g. additional Lara animations) will be marked in <span class="green">green</span>.
+</p>
+</li>
+<li>
+<p>
+Unused entities (with no code attached to them) will be marked in <span class="purple">purple</span>.
+</p>
+</li>
+<li>
+<p>
+TR1 and TR2-specific sprite entities will be marked as <strong>bold</strong>.
+</p>
+</li>
+<li>
+<p>
+Menu items will be marked as <em>italic</em>.
+</p>
+</li>
+</ul></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note">
+</td>
+<td class="content">In all games, Lara is always an entity with ID #0.</td>
+</tr></table>
+</div>
+<div class="sect3">
+<h4 id="_tomb_raider_i">15.1.1. Tomb Raider I</h4>
+<table class="tableblock frame-all grid-all"
+style="
+margin-left:auto; margin-right:auto;
+width:100%;
+">
+<col style="width:11%;">
+<col style="width:22%;">
+<col style="width:66%;">
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" > ID  </th>
+<th class="tableblock halign-left valign-top" > Entity Name                       </th>
+<th class="tableblock halign-left valign-top" > Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">0</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Lara</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Including Lara skin</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">1</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Lara pistols animation</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Animations used for pistol shooting</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">2</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Lara shotgun animation</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Same as above, for shotgun</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">3</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Lara magnums animation</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Same as above, for magnums</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">4</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Lara uzis animation</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Same as above, for uzis</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">5</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Lara misc</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Various additional anims and models used across the game (Home suit, wounded Lara, Gold Lara etc.)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">6</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Doppelgagner</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Mirrors Lara behaviour</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">7</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Wolf</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">8</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Bear</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">9</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Bat</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">10</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Crocodile (on land)</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">11</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Crocodile (in water)</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">12</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Lion (male)</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">13</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Lion (female)</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">14</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Panther</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">15</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Gorilla</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">16</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Rat (on land)</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">17</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Rat (in water)</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">18</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">T-Rex</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">19</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Raptor</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">20</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Winged mutant</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">21</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Respawn point</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">22</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">AI target</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">23</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Centaur mutant</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">24</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Mummy</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">25</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="purple">DinoWarrior</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Leftover from beta versions, unused in final game</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">26</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="purple">Fish</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Leftover from beta versions, unused in final game</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">27</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Larson</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Full name: <strong>Larson Conway</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">28</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Pierre</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Full name: <strong>Pierre Dupont</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">29</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Skateboard</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Linked to entity ID# 30 at runtime</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">30</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Skateboard Kid</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Full name: <strong>Jerome Johnson</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">31</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">The Cowboy</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">32</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Kold</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Full name: <strong>Kin Kade</strong>, previously known as <strong>Mr. T</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">33</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Winged Natla</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">34</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Torso Boss</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">35</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Falling block</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Hard collision above floor level, trigger should be in sector to activate</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">36</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Swinging blade</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">37</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Teeth spikes</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">38</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Rolling ball</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">39</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Dart</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Projectile, dynamically generated by entity ID #40</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">40</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Dart emitter</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">41</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Lifting door</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Acts in reverse with activation mask set on start-up</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">42</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Slamming doors</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">43</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Sword of Damocles</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">44</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Thor&#8217;s hammer&#8217;s handle</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">45</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Thor&#8217;s hammer&#8217;s block</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Linked to handle at runtime</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">46</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Thor&#8217;s lightning ball</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Only first mesh is rendered, others are nullmesh pointers for lighting strikes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">47</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Barricade</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Used to block final door in LEVEL4.PHD</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">48</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Pushable block</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Adds value of (4 x 256 = 1024) to floordata height below</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">49</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Pushable block</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">50</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Pushable block</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">51</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Pushable block</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">52</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Moving block</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Adds value of (8 x 256 = 2048) to floordata height below</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">53</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Falling ceiling</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">54</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="purple">Sword of Damocles</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Duplicate of entity ID #43</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">55</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Wall switch</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">56</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Underwater switch</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">57</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Door</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">When closed, puts WALL (0x81) property to sector(s) behind, recursively including sector in neighbour room, if collisional portal is present</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">58</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Door</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Same as above</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">59</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Door</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Same as above</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">60</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Door</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Same as above</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">61</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Door</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Same as above</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">62</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Door</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Same as above</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">63</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Door</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Same as above</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">64</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Door</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Same as above</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">65</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Trapdoor</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">When closed, blocks portal below, if exists</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">66</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Trapdoor</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Same as above</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">68</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Bridge (flat)</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Trigger should be in sector to activate</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">69</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Bridge tilt 1</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Trigger should be in sector to activate</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">70</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Bridge tilt 2</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Trigger should be in sector to activate</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">71</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Passport (opening)</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">72</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Compass</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">73</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Lara&#8217;s Home photo</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">74</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Animating 1</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Used as cogs in LEVEL3A.PHD</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">75</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Animating 2</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Used as cogs in LEVEL3A.PHD</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">76</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Animating 3</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Used as cogs in LEVEL3A.PHD</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">77</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Cutscene actor 1</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">78</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Cutscene actor 2</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">79</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Cutscene actor 3</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">80</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Cutscene actor 4</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">81</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Passport (closed)</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">82</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="purple">Map</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Present only in beta versions</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">83</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Savegame crystal</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Unused in PC versions</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">84</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Pistols</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">85</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Shotgun</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">86</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Magnums</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">87</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Uzis</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">88</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Pistol ammo</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">No actual effect on inventory</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">89</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Shotgun ammo</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">90</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Magnum ammo</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">91</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Uzi ammo</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">92</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="purple">Dynamite</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Present only in beta versions</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">93</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Small medipack</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Restores 1/2 of Lara HP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">94</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Large medipack</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Restores Lara HP to maximum</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">95</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Sunglasses</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">96</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Cassette player</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">97</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Direction keys</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">98</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="purple">Flashlight</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">99</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Pistols</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">100</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Shotgun</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">101</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Magnums</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">102</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Uzis</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">103</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Pistol ammo</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">104</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Shotgun ammo</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">105</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Magnum ammo</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">106</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Uzi ammo</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">107</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="purple"><em>Dynamite</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Present only in beta versions</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">108</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Small medipack</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">109</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Large medipack</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">110</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Puzzle 1</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">111</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Puzzle 2</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">112</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Puzzle 3</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">113</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Puzzle 4</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">114</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Puzzle 1</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">115</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Puzzle 2</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">116</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Puzzle 3</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">117</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Puzzle 4</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">118</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Puzzle hole 1</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Swaps to entity ID #122 when entity ID #114 is used</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">119</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Puzzle hole 2</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Swaps to entity ID #123 when entity ID #115 is used</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">120</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Puzzle hole 3</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Swaps to entity ID #124 when entity ID #116 is used</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">121</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Puzzle hole 4</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Swaps to entity ID #125 when entity ID #117 is used</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">122</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Puzzle done 1</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">123</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Puzzle done 2</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">124</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Puzzle done 3</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">125</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Puzzle done 4</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">126</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Lead bar</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Used against entity ID #128 to transform into entity ID #110</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">127</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Lead bar</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">128</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Midas gold touch</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">When Lara is standing in same sector, turns her to gold. When entity ID #127 applied in radius of ~1/2 sector, perform transformation to entity ID #114</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">129</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Key 1</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">130</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Key 2</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">131</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Key 3</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">132</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Key 4</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">133</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Key 1</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Pick-up item</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">134</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Key 2</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Pick-up item</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">135</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Key 3</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Pick-up item</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">136</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Key 4</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Pick-up item</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">137</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Keyhole 1</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">138</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Keyhole 2</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">139</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Keyhole 3</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">140</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Keyhole 4</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">143</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Scion piece</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Special way (next to, not below) and animation for pick-up</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">145</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Scion (shootable)</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Used in LEVEL10C.PHD</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">146</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Scion</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Used in LEVEL10B.PHD</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">147</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Scion holder</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">150</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Scion piece</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">151</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong><span class="green">Explosion</span></strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">153</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong><span class="green">Water ripples</span></strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Emitted by entity ID #170 and Lara going underwater</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">155</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong><span class="green">Bubbles</span></strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Emitted by Lara underwater</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">158</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong><span class="green">Blood</span></strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">160</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong><span class="green">Smoke</span></strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">161</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Centaur statue</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">162</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Natla&#8217;s Mines shack</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Produces no actual collision, which is done via flipmaps</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">163</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Mutant egg (small)</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">164</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong><span class="green">Ricochet</span></strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">165</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong><span class="green">Sparkles</span></strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Used for Midas golden effect</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">166</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Gunflare</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Rendered when shooting</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">169</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Camera target</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">170</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Waterfall mist</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Generates water ripples below</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">172</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Mutant bullet</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Projectile, dynamically generated by mutant</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">173</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Mutant grenade</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Projectile, dynamically generated by mutant</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">176</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Lava particle emitter</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">177</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Lava particle emitter</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Produces sound and bouncing sprite bubbles</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">178</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Flame emitter</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">179</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Flame emitter</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Generates flame sprite sequence, sets Lara on fire in radius of ~1/2 sector</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">180</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Flowing Atlantean lava</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">When activated, moves until stopped by wall or slope</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">181</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Mutant egg (big)</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">For Torso Boss</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">182</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Motorboat</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Produces no actual collision, which is done via flipmaps</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">183</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Earthquake</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Shakes camera and plays several rumble sound FXs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">189</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="purple">Lara&#8217;s ponytail</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Never finished and never used in game, present in LEVEL3A.PHD</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">190</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong><span class="green">Fonts</span></strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">191</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong>Plant 1</strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">192</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong>Plant 2</strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">193</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong>Plant 3</strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">194</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong>Plant 4</strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">195</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong>Plant 5</strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">200</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong>Bag 1</strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">204</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong>Bag 2</strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">212</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong>Rock 1</strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">213</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong>Rock 2</strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">214</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong>Rock 3</strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">215</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong>Bag 3</strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">216</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong>Debris 1</strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">217</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong>Debris 2</strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">231</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong>Debris 3</strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">233</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong>Mummified statue</strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">236</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong>Debris 4</strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">237</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong>Debris 5</strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">238</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong>Debris 6</strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">239</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong>Debris 7</strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footnotes"><hr></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-12-31 04:04:14 MSK
+Last updated 2017-01-02 02:56:33 MSK
 </div>
 </div>
 </body>
