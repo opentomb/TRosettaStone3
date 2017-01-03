@@ -2072,7 +2072,7 @@ width:100%;
 <col style="width:1%;">
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2017-01-02)</strong></p></div>
+<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2017-01-03)</strong></p></div>
 <div class="paragraph"><p>Including Tomb Raider <span class="monospaced">.PHD/.TUB</span>, Tomb Raider II-III <span class="monospaced">.TR2</span>, Tomb Raider IV <span class="monospaced">.TR4</span> and Tomb Raider Chronicles (V) <span class="monospaced">.TRC</span> information, where available.</p></div>
 <div class="paragraph"><p>Also includes <span class="monospaced">TOMBPC.DAT</span> and <span class="monospaced">SCRIPT.TR4</span> script information, <span class="monospaced">CDAUDIO.WAD</span> and <span class="monospaced">CUTSEQ.PAK</span>/<span class="monospaced">CUTSEQ.BIN</span> information.</p></div></div></td>
 <td class="tableblock halign-right valign-middle" ><div><div class="paragraph"><p><span class="image">
@@ -5981,6 +5981,19 @@ Perform an attack based on aforementioned calculations.
 </p>
 </li>
 </ul></div>
+<div class="paragraph"><p>TR3 also features two additional AI objects which are used solely with Willard boss in Meteorite Cavern:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<strong>AI_PATH</strong>&#8201;&#8212;&#8201;Presumably, Willard spider will use these AI objects as a waypoints, circling around cavern. When certain AI_PATH object is reached, Willard will search for next one in a row, and follow it. When last one is reached, operation repeats from the beginning.
+</p>
+</li>
+<li>
+<p>
+<strong>AI_CHECK</strong>&#8201;&#8212;&#8201;Presumably, when such object is in ~2 sectors range, Willard will check if Lara is in proximity range to any of meteorite artifacts, and if so, he will shoot.
+</p>
+</li>
+</ul></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -6053,6 +6066,18 @@ width:40%;
 <td class="tableblock halign-center valign-top" ><p class="tableblock monospaced">78</p></td>
 <td class="tableblock halign-center valign-top" ><p class="tableblock monospaced">402</p></td>
 <td class="tableblock halign-center valign-top" ><p class="tableblock monospaced">382</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">AI_PATH</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock monospaced">80</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock monospaced">402</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock monospaced">382</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">AI_CHECK</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock monospaced">81</p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock monospaced"></p></td>
+<td class="tableblock halign-center valign-top" ><p class="tableblock monospaced"></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" ><p class="tableblock">AI_X1</p></td>
@@ -10043,7 +10068,7 @@ Unused entities (with no code attached to them) will be marked in <span class="p
 </li>
 <li>
 <p>
-TR1 and TR2-specific sprite entities will be marked as <strong>bold</strong>.
+Sprite entities will be marked as <strong>bold</strong>.
 </p>
 </li>
 <li>
@@ -11047,12 +11072,12 @@ width:100%;
 <tr>
 <td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">0</p></td>
 <td class="tableblock halign-left valign-top" ><p class="tableblock">Lara</p></td>
-<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Including Lara skin</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">1</p></td>
 <td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Lara pistols animation</span></p></td>
-<td class="tableblock halign-left valign-top" ><p class="tableblock">Animations used for pistol shooting</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Same action as in TR1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">2</p></td>
@@ -11062,7 +11087,7 @@ width:100%;
 <tr>
 <td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">3</p></td>
 <td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Lara shotgun animation</span></p></td>
-<td class="tableblock halign-left valign-top" ><p class="tableblock">Animations used for shotgun shooting</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Same action as in TR1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">4</p></td>
@@ -11112,12 +11137,12 @@ width:100%;
 <tr>
 <td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">13</p></td>
 <td class="tableblock halign-left valign-top" ><p class="tableblock">Red snowmobile</p></td>
-<td class="tableblock halign-left valign-top" ><p class="tableblock">Goes faster than black one, but can&#8217;t shoot</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Vehicle; goes faster than black one, but can&#8217;t shoot</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">14</p></td>
 <td class="tableblock halign-left valign-top" ><p class="tableblock">Boat</p></td>
-<td class="tableblock halign-left valign-top" ><p class="tableblock">Vehicle useable by Lara</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Vehicle</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">15</p></td>
@@ -11297,7 +11322,7 @@ width:100%;
 <tr>
 <td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">51</p></td>
 <td class="tableblock halign-left valign-top" ><p class="tableblock">Black snowmobile</p></td>
-<td class="tableblock halign-left valign-top" ><p class="tableblock">Goes slower than red one, but can shoot</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Vehicle; goes slower than red one, but can shoot</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">52</p></td>
@@ -11421,7 +11446,7 @@ width:100%;
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">79</p></td>
-<td class="tableblock halign-left valign-top" ><p class="tableblock">Sandbag / Ceiling fragments</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Falling ceiling / Sandbag</p></td>
 <td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
 </tr>
 <tr>
@@ -12266,7 +12291,7 @@ width:100%;
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">260</p></td>
-<td class="tableblock halign-left valign-top" ><p class="tableblock">The butler</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Winston</p></td>
 <td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
 </tr>
 <tr>
@@ -12283,6 +12308,1477 @@ width:100%;
 <td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">264</p></td>
 <td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Dragon explosion emitter</span></p></td>
 <td class="tableblock halign-left valign-top" ><p class="tableblock">Activates when Lara at a close range, produces animation sequence using entity models ID #209-211, then spawns entity ID #22 at the end</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_tomb_raider_3">15.1.3. Tomb Raider 3</h4>
+<table class="tableblock frame-all grid-all"
+style="
+margin-left:auto; margin-right:auto;
+width:100%;
+">
+<col style="width:10%;">
+<col style="width:30%;">
+<col style="width:60%;">
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" > ID  </th>
+<th class="tableblock halign-left valign-top" > Entity Name                         </th>
+<th class="tableblock halign-left valign-top" > Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">0</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Lara</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Animations only, skin is now placed in ID #315</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">1</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Lara pistol animation</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Same action as in TR2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">2</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Lara&#8217;s ponytail</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">As above</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">3</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Lara shotgun animation</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">As above</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">4</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Lara Desert Eagle animation</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">One-handed gun animation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">5</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Lara Uzi animation</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Same action as in TR2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">6</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Lara MP5 animation</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">As above</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">7</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Lara rocket launcher animation</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">8</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Lara grenade gun animation</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Same action as in TR2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">9</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Lara harpoon gun animation</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">As above</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">10</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Lara flare animation</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">As above</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">11</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Lara UPV animation</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Animations for UPV vehicle</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">12</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">UPV</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Vehicle</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">14</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Kayak</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">As above</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">15</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Inflatable boat</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">As above</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">16</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Quadbike</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">As above</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">17</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Mine cart</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">As above</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">18</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Big gun</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Mannable gun (Lara can operate it)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">19</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Hydro propeller (?)</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">20</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Tribesman with spiked axe</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">21</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Tribesman with poison-dart gun</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">22</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Dog</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">23</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Rat</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">24</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Kill All Triggers</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Deactivates all triggered entities, sometimes buggy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">25</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Killer whale</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">26</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Scuba diver</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">27</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Crow</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">28</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Tiger</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">29</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Vulture</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">30</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Assault-course target</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">31</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Crawler mutant in closet</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">32</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Crocodile (in water)</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">34</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Compsognathus</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">35</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Lizard man</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">36</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Puna</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">37</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Mercenary</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">38</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Raptor hung by rope</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Used as fish bait in Crash Site (CRASH.TR2)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">39</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">RX-Tech guy in red jacket</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">40</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">RX-Tech guy with gun</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Dressed like flamethrower guy (ID #50)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">41</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Dog (Antarctica)</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">42</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Crawler mutant</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">44</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Tinnos wasp</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">45</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Tinnos monster</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">46</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Brute mutant (with claw)</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">47</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Tinnos wasp respawn point</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">When activated, constantly generates specific number of wasps</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">48</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Raptor respawn point</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Hardcoded to respawn number of raptors previously unkilled in level</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">49</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Willard spider</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">50</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">RX-Tech flamethrower guy</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">51</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">London mercenary</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">53</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Punk</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">"Damned" stick-wielding goon</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">56</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">London guard</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">57</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Sophia Lee</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">58</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Cleaner robot</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Also called "Thames Wharf machine"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">60</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">MP with stick</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">61</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">MP with gun</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">62</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Prisoner</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">63</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">MP with sighted gun and night sight</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">64</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Gun turret</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">65</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Dam guard</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">66</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Tripwire</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">67</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Electrified wire</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">68</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Killer tripwire</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">69</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Cobra / Rattlesnake</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">70</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Shiva</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">71</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Monkey</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">73</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Tony Firehands</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">74</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">AI Guard</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">75</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">AI Ambush</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">76</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">AI Patrol 1</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">77</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">AI Modify</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">78</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">AI Follow</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">79</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">AI Patrol 2</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">80</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">AI Path</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Used by Willard spider boss to circle around meteorite cavern</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">81</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">AI Check</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Used by Willard spider boss to check if Lara is in artifact chamber and shoot if she&#8217;s in</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">82</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Unknown</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">83</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Falling block</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">86</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Swinging thing</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">87</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Teeth spikes / Barbed wire</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">88</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Rolling ball / Barrel</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">89</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Giant boulder</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Appears in Temple of Puna</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">90</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Disc</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Mesh is a leftover from TR2 discgun, engine uses wireframe darts instead</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">91</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Dart shooter</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">94</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Skeleton trap / Slamming door</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">97</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Pushable block 1</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">98</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Pushable block 2</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">101</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Destroyable boarded-up window</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">102</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Destroyable boarded-up window / wall</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">106</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Area 51 swinger</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">107</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Falling ceiling</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">108</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Rolling spindle</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">110</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Subway train</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">111</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Wall knife blade / Knife disk</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">113</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Detachable stalactites</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">114</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Spiky wall</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Same action as in TR2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">116</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Spiky vertical wall / Tunnel borer</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">117</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Valve wheel / Pulley</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">118</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Small wall switch</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">119</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Damaging animating 1</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Underwater propeller / Diver sitting on block / Underwater rotating knives / Meteorite, causes damage on collision</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">120</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Damaging animating 2</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Fan, causes damage on collision</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">121</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Damaging animating 3</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Heavy stamper / Grinding drum / Underwater rotating knives, causes damage on collision</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">122</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Shiva statue</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Original petrified state, never activates</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">123</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Monkey medipack meshswap</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Monkey head gets replaced by this when it picks up medipack</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">124</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Monkey key meshswap</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Monkey head gets replaced by this when it picks up key</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">125</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong><span class="green">UI frame</span></strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Used to create UI elements</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">127</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Zipline handle</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Same action as in TR2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">128</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Push-button switch</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">129</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Wall switch</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">130</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Underwater switch</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">131</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Door 1</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">132</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Door 2</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">133</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Door 3</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">134</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Door 4</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">135</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Door 5</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">136</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Door 6</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">137</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Door 7</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">138</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Door 8</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">139</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Trapdoor 1</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">140</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Trapdoor 2</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">141</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Trapdoor 3</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">142</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Bridge flat</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">143</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Bridge tilt 1</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">144</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Bridge tilt 2</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">145</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Passport (opening up)</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">146</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Stopwatch</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">147</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Lara&#8217;s Home photo</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">148</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Cutscene actor 1</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">149</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Cutscene actor 2</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">150</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Cutscene actor 3</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">151</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Cutscene actor 4</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">152</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Cutscene actor 5</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">153</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Cutscene actor 6</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">154</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Cutscene actor 7</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">155</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Cutscene actor 8</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">156</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Cutscene actor 9</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">158</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Passport (closed)</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">159</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Map</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">160</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Pistols</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">161</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Shotgun</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">162</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Desert Eagle</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">163</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Uzis</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">164</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Harpoon gun</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">165</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">MP5</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">166</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Rocket launcher</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">167</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Grenade launcher</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">168</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Pistol ammo</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">169</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Shotgun ammo</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">170</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Desert Eagle ammo</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">171</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Uzi ammo</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">172</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Harpoons</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">173</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">MP5 ammo</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">174</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Rockets</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">175</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Grenades</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">176</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Small medipack</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">177</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Large medipack</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">178</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Flares</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">179</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Flare</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Spawns when Lara throws flare away, re-pickupable</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">180</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Savegame crystal</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">181</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Sunglasses</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">182</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Portable CD Player</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">183</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Direction keys</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">184</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Globe</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">For indicating destinations in "Select level" dialog</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">185</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Pistols</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">186</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Shotgun</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">187</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Desert Eagle</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">188</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Uzis</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">189</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Harpoon gun</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">190</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">MP5</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">191</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Rocket launcher</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">192</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Grenade gun</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">193</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Pistol ammo</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">194</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Shotgun ammo</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">195</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Desert Eagle ammo</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">196</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Uzi ammo</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">197</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Harpoons</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">198</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">MP5 ammo</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">199</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Rockets</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">200</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Grenades</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">201</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Small medipack</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">202</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Large medipack</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">203</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Flares</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">204</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Savegame crystal</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">205</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Puzzle 1</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">206</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Puzzle 2</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">207</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Puzzle 3</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">208</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Puzzle 4</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">209</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Puzzle 1</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">210</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Puzzle 2</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">211</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Puzzle 3</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">212</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Puzzle 4</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">213</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Slot 1 empty</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Swaps to entity ID #217 when entity ID #209 is used</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">214</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Slot 2 empty</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Swaps to entity ID #218 when entity ID #210 is used</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">215</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Slot 3 empty</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Swaps to entity ID #219 when entity ID #211 is used</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">216</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Slot 4 empty</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Swaps to entity ID #220 when entity ID #212 is used</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">217</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Slot 1 full</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">218</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Slot 2 full</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">219</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Slot 3 full</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">220</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Slot 4 full</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">224</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Key 1</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">225</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Key 2</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">226</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Key 3</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">227</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Key 4</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">228</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Key 1</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">229</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Key 2</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">230</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Key 3</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">231</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Key 4</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">232</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Keyhole 1</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Used with entity ID #224</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">233</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Keyhole 2</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Used with entity ID #225</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">234</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Keyhole 3</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Used with entity ID #226</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">235</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Keyhole 4</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Used with entity ID #227</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">236</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Quest item 1</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">237</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Quest item 2</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">No effect on actual inventory</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">238</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Quest item 1</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">239</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Quest item 2</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">No effect on actual inventory</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">240</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Infada stone</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">241</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Element 115</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">242</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Eye of Isis</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">243</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Ora dagger</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">244</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Infada stone</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">245</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Element 115</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">246</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Eye of Isis</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">247</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><em><span class="green">Ora dagger</span></em></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">272</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Keys (sprite)</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">273</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Keys (sprite)</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">276</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Infada stone</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">277</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Element 115</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">278</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Eye of Isis</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">279</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="blue">Ora dagger</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">282</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Fire-breathing dragon statue</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">285</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Unknown visible 285</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">287</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Tyrannosaur</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">288</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Raptor</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">291</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Laser sweeper</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">292</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Electrified Field</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">294</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong><span class="green">Shadow sprite</span></strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Applied as a blob shadow with subtractive blending</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">295</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Detonator switch box</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">296</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong><span class="green">Misc sprites</span></strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Sprites for different purposes merged into single object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">297</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong><span class="green">Bubble</span></strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">299</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong><span class="green">Glow</span></strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">300</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Gunflare</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">301</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Gunflare (MP5)</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">304</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Look At item</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">305</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Waterfall mist</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">306</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Harpoon (single)</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">309</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Rocket (single)</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">310</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Harpoon (single)</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">311</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Grenade (single)</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">312</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Big missile</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">313</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Smoke</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">314</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Movable Boom</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">315</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Lara skin</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">316</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong><span class="green">Glow 2</span></strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">317</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Unknown visible 317</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">318</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Alarm light</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">319</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Light</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">321</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Light 2</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">322</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Pulsating Light</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">324</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Red Light</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">325</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Green Light</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">326</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Blue Light</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">327</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Light 3</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">328</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Light 4</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">330</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Fire</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">331</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Alternate Fire</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">332</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Alternate Fire 2</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">333</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Fire 2</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">334</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Smoke 2</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">335</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Smoke 3</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">336</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Smoke 4</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">337</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Greenish Smoke</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">338</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Pirahnas</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">339</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Fish</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">347</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Bat swarm</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">349</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Animating 1</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">350</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Animating 2</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">351</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Animating 3</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">352</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Animating 4</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">353</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Animating 5</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">354</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Animating 6</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">355</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Skybox</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">356</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong><span class="green">Font graphics</span></strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">357</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Doorbell</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Produces no actual sound</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">358</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Unknown id 358</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">360</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Winston</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">361</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Winston in camo suit</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Deactivates entity ID #360 when triggered</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">362</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong><span class="green">Timer font graphics</span></strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Used in Assault Course and racetrack</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">365</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="red">Earthquake</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">366</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Yellow shell casing</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Spawned when firing pistols, uzis, MP5 or Desert Eagle</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">367</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><span class="green">Red shell casing</span></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Spawned when firing shotgun</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">370</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Tinnos light shaft</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" ><p class="tableblock monospaced">373</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Electrical switch box</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"></p></td>
 </tr>
 </tbody>
 </table>
