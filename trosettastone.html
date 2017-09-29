@@ -2072,7 +2072,7 @@ width:100%;
 <col style="width:1%;">
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2017-01-08)</strong></p></div>
+<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2017-09-29)</strong></p></div>
 <div class="paragraph"><p>Including Tomb Raider <span class="monospaced">.PHD/.TUB</span>, Tomb Raider II-III <span class="monospaced">.TR2</span>, Tomb Raider IV <span class="monospaced">.TR4</span> and Tomb Raider Chronicles (V) <span class="monospaced">.TRC</span> information, where available.</p></div>
 <div class="paragraph"><p>Also includes <span class="monospaced">TOMBPC.DAT</span> and <span class="monospaced">SCRIPT.TR4</span> script information, <span class="monospaced">CDAUDIO.WAD</span> and <span class="monospaced">CUTSEQ.PAK</span>/<span class="monospaced">CUTSEQ.BIN</span> information.</p></div></div></td>
 <td class="tableblock halign-right valign-middle" ><div><div class="paragraph"><p><span class="image">
@@ -5858,7 +5858,7 @@ Make sure that there are no any duplicate boxes.
     <span class="kt">int16_t</span> <span class="n">OverlapIndex</span><span class="p">;</span>  <span class="c1">// Bits 0-13 is the index into Overlaps[]</span>
 <span class="p">};</span>
 </pre></div></div></div>
-<div class="paragraph"><p>In <span class="monospaced">OverlapIndex</span>, the high bit is sometimes set; this occurs in front of swinging doors and the like. That basically means they are unpassable by large enemies, like the T-Rex.</p></div>
+<div class="paragraph"><p>The <span class="monospaced">OverlapIndex</span> contains block mask for path finding by enemies in two high bits: 15-bit (blockable) and 14-bit (blocked). First one unpassable by large enemies, like the T-Rex (18), Mutant (20) and Centaur (23) and always is setted behind the doors. Second one unpassable for other enemies and set is for movable blocks (if blockable bit is set), for closed doors and for some flip maps (set at start).</p></div>
 </div>
 <div class="sect4">
 <h5 id="_overlaps">Overlaps</h5>
@@ -6257,6 +6257,24 @@ propagate omnidirectionally for about 8 horizontal-grid sizes without regard for
     <span class="kt">uint16_t</span> <span class="n">Flags</span><span class="p">;</span>     <span class="c1">// 0x40, 0x80, or 0xC0</span>
 <span class="p">};</span>
 </pre></div></div></div>
+<div class="paragraph"><p><span class="monospaced">Flags</span> field defines sound source behaviour, if it was placed in room which can be flipped to alternate room:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<span class="monospaced">0x40</span>: Play sound only when room is in alternate state.
+</p>
+</li>
+<li>
+<p>
+<span class="monospaced">0x80</span>: Play sound only when room is in original state.
+</p>
+</li>
+<li>
+<p>
+<span class="monospaced">0xC0</span>: Always play sound (in both original and alternate rooms).
+</p>
+</li>
+</ul></div>
 </div>
 <div class="sect3">
 <h4 id="_sound_map">8.3.2. Sound Map</h4>
@@ -13788,7 +13806,7 @@ width:100%;
 <div id="footnotes"><hr></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-01-08 19:15:47 MSK
+Last updated 2017-09-29 02:50:55 MSK
 </div>
 </div>
 </body>
