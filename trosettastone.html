@@ -2392,7 +2392,7 @@ cellspacing="0" cellpadding="4">
 <div class="paragraph"><p>All multi-byte integers (<code>{u}int16_t</code>, <code>{u}int32_t</code>) are stored in little-endian (Intel-x86, etc.) format, with the least significant byte stored first and the
 most significant byte stored last. When using this data in platforms with big-endian (PowerPC, etc.) number format, be sure to reverse the order of bytes.</p></div>
 <div class="sect3">
-<h4 id="_16_16_fixed_point_data_types">2.2.1. 16.16 Fixed Point Data Types</h4>
+<h4 id="_fixed_point_data_types">2.2.1. Fixed Point Data Types</h4>
 <div class="paragraph"><p>These very specific data types mimic floating-point behaviour, <em>while remaining integer</em>. It is done by splitting floating-point value into whole and
 fractional parts, and keeping each part as <code>int16_t</code> and <code>uint16_t</code> correspondingly for <code>fixed</code> type and as <code>uint8_t</code> and <code>uint8_t</code> for <code>ufixed16</code> type. Whole part is kept as it is, while fractional part is multiplied by 65536 (for <code>fixed</code>) or by 255 (for <code>ufixed16</code>), and then kept as unsigned integer. So, the formula to calculate floating-point from <code>fixed</code> is:</p></div>
 <div class="tableblock">
