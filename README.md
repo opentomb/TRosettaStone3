@@ -13,7 +13,7 @@ Documentation project is developed in sync with open-source Tomb Raider engine i
 
 On Windows:
 
-. Install MSYS2 from here: https://www.msys2.org/
-. Launch *MSYS2 MSYS* and do `pacman -Syu` and `pacman -Su` commands
-. Restart *MSYS2 MSYS* and do `pacman -S python3`, `pacman -S python3-setuptools`, `pacman -S mingw-w64-i686-asciidoc-py3-git` and `pacman -S mingw-w64-i686-python3-pygments` commands
-. Launch *MSYS MINGW32* and compile TRS3 with this command: `asciidoc -bhtml5 -a 'newline=\n' [your_path_to_TRS3]/trosettastone.asc`
+* Install MSYS2 from here: https://www.msys2.org/
+* Launch *MSYS2 MSYS* and do `pacman -Syu` and `pacman -Su` commands
+* Restart *MSYS2 MSYS* and do `pacman -S python3`, `pacman -S python3-setuptools`, `pacman -S mingw-w64-i686-asciidoc-py3-git` and `pacman -S mingw-w64-i686-python3-pygments` commands
+* Launch *MSYS MINGW32* and compile TRS3 with this command: `asciidoc -bhtml5 -a 'newline=\n' [your_path_to_TRS3]/trosettastone.asc`
