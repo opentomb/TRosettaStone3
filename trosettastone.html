@@ -2072,7 +2072,7 @@ width:100%;
 <col style="width:1%;">
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2019-08-28)</strong></p></div>
+<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2019-09-06)</strong></p></div>
 <div class="paragraph"><p>Including Tomb Raider <span class="monospaced">.PHD/.TUB</span>, Tomb Raider II-III <span class="monospaced">.TR2</span>, Tomb Raider IV <span class="monospaced">.TR4</span> and Tomb Raider Chronicles (V) <span class="monospaced">.TRC</span> information, where available.</p></div>
 <div class="paragraph"><p>Also includes <span class="monospaced">TOMBPC.DAT</span> and <span class="monospaced">SCRIPT.TR4</span> script information, <span class="monospaced">CDAUDIO.WAD</span> and <span class="monospaced">CUTSEQ.PAK</span>/<span class="monospaced">CUTSEQ.BIN</span> information.</p></div></div></td>
 <td class="tableblock halign-right valign-middle" ><div><div class="paragraph"><p><span class="image">
@@ -2941,7 +2941,7 @@ pathfinding (see the <a href="#non-player-character-behaviour">Non-player charac
 <img src="images/icons/tr5.png" alt="TR5 only" width="16" height="17" title="TR5 only">
 </span> In these games, <span class="monospaced">BoxIndex</span> field is more complicated, and actually contains <em>two packed values</em>. Bits 4..14 contain the <em>actual box index</em>, and
 bits 0..3 contain <em>material index</em>, which is used to produce specific footstep sound, when Lara is walking or running in this sector. On PlayStation game
-versions, this index was also used to determine if footprint textures should be applied to this particular place.</p></div>
+versions, this index was also used to determine if footprint textures should be applied to this particular place. Both procedures are invoked via <span class="monospaced">FOOTPRINT_FX</span> flipeffect, which is described in <a href="#flipeffects">corresponding section</a>.</p></div>
 <div class="paragraph"><p>Majority of <em>material index</em> values are the same across game versions, but some of them exist only in particular game. Here is the description:</p></div>
 <div class="ulist"><ul>
 <li>
@@ -5693,7 +5693,7 @@ parsed after current one without switching to next AnimCommand). For a given ani
 <img src="images/icons/tr4.png" alt="TR4 only" width="16" height="17" title="TR4 only">
 </span><span class="image">
 <img src="images/icons/tr5.png" alt="TR5 only" width="16" height="17" title="TR5 only">
-</span> Besides Sound ID, second argument may contain two &#8220;packed&#8221; bit flags. Their meanings are:</p></div>
+</span> Besides Sound ID, second argument may contain one of two &#8220;packed&#8221; bit flags. Their meanings are:</p></div>
 </div></div>
 <div class="ulist"><ul>
 <li>
@@ -5710,8 +5710,30 @@ parsed after current one without switching to next AnimCommand). For a given ani
 </li>
 <li>
 <p>
-<strong>Flipeffect</strong> (2 operands). The first one is a frame number, and the second one is flipeffect number. Note that <em>flipeffect</em> here is the very same kind of flipeffect <a href="#trigaction-0x09-flipeffect">used in <em>trigger action</em></a> with the same name. Flipeffect meaning is <a href="#flipeffects">listed separately</a>.
+<strong>Flipeffect</strong> (2 arguments). The first one is a frame number, and the second one is flipeffect number. Note that <em>flipeffect</em> here is the very same kind of flipeffect <a href="#trigaction-0x09-flipeffect">used in <em>trigger action</em></a> with the same name. Flipeffect meaning is <a href="#flipeffects">listed separately</a>.
 </p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph"><p><span class="image">
+<img src="images/icons/tr3.png" alt="TR3 only" width="16" height="17" title="TR3 only">
+</span><span class="image">
+<img src="images/icons/tr4.png" alt="TR4 only" width="16" height="17" title="TR4 only">
+</span><span class="image">
+<img src="images/icons/tr5.png" alt="TR5 only" width="16" height="17" title="TR5 only">
+</span> Usually, when <span class="monospaced">FOOTPRINT_FX</span> flipeffect (ID 32) is used, second argument also may contain one of two &#8220;packed&#8221; bit flags, similar to Play Sound animcommand. However, meaning is different:</p></div>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<span class="monospaced">0x4000</span>&#8201;&#8212;&#8201;apply FOOTPRINT_FX in relation to left foot
+</p>
+</li>
+<li>
+<p>
+<span class="monospaced">0x8000</span>&#8201;&#8212;&#8201;apply FOOTPRINT_FX in relation to right foot
+</p>
+</li>
+</ul></div>
 </li>
 </ol></div>
 </div>
@@ -7860,6 +7882,11 @@ width:100%;
 <li>
 <p>
 <span class="monospaced">FLOOD_FX</span>&#8201;&#8212;&#8201;Plays <em>global</em> flooding sound (TR1&#8201;&#8212;&#8201;ID #81, TR2&#8201;&#8212;&#8201;ID #79, TR3&#8201;&#8212;&#8201;ID #163, TR4&#8201;&#8212;&#8201;ID #238). Implementation differs from version to version&#8201;&#8212;&#8201;in TR1 and TR2 looped waterfall sound is used (which is then stopped by an engine after 1 second), while in TR3 and TR4 one-shot sound is engaged.
+</p>
+</li>
+<li>
+<p>
+<span class="monospaced">FOOTPRINT_FX</span>&#8201;&#8212;&#8201;Plays random footprint sound effect, taking current block&#8217;s <strong>material index</strong> into consideration. On PlayStation, also applies footprint sprite under left or right Lara foot (target foot is selected based on packed flag which is stored in animcommand argument&#8201;&#8212;&#8201;<a href="#tr_anim_command">look here</a> for details).
 </p>
 </li>
 </ul></div>
