@@ -2,6 +2,8 @@ TRosettaStone 3
 ---------------
 *Tomb Raider 1-5 file format and engine documentation*
 
+[See HTML version](https://opentomb.github.io/TRosettaStone3/trosettastone.html)
+
 **TRosettaStone 3** (TRS3) is a third iteration of well-known document describing classic Tomb Raider file formats.
 It will include all the information from old TRosettaStone from 1999, updated (second) version by Popov, TR5 file format notes by Roy, cutseq.pak file format by sapper, and many other sources. Some information, like function and variable names, is borrowed from leaked TR5 SDK and debug mappings of TR1 beta.
 
