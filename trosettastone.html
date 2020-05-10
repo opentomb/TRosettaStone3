@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="generator" content="AsciiDoc 8.6.10">
+<meta name="generator" content="AsciiDoc 9.0.0rc2">
 <title>Tomb Raider Data Formats (TRosettaStone)</title>
 <style type="text/css">
 /* Shared CSS for AsciiDoc xhtml11 and html5 backends */
@@ -2072,7 +2072,7 @@ width:100%;
 <col style="width:1%;">
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2019-09-10)</strong></p></div>
+<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2020-05-10)</strong></p></div>
 <div class="paragraph"><p>Including Tomb Raider <span class="monospaced">.PHD/.TUB</span>, Tomb Raider II-III <span class="monospaced">.TR2</span>, Tomb Raider IV <span class="monospaced">.TR4</span> and Tomb Raider Chronicles (V) <span class="monospaced">.TRC</span> information, where available.</p></div>
 <div class="paragraph"><p>Also includes <span class="monospaced">TOMBPC.DAT</span> and <span class="monospaced">SCRIPT.TR4</span> script information, <span class="monospaced">CDAUDIO.WAD</span> and <span class="monospaced">CUTSEQ.PAK</span>/<span class="monospaced">CUTSEQ.BIN</span> information.</p></div></div></td>
 <td class="tableblock halign-right valign-middle" ><div><div class="paragraph"><p><span class="image">
@@ -3713,6 +3713,11 @@ boundaries as original room, but altered geometry and/or texturing. Detailed des
 </li>
 <li>
 <p>
+<strong>1</strong>&#8201;&#8212;&#8201;Produces flickering effect, with <span class="monospaced">effect_value</span> acting the same way&#8201;&#8212;&#8201;as intensity multiplier.
+</p>
+</li>
+<li>
+<p>
 <strong>2</strong>&#8201;&#8212;&#8201;If <span class="monospaced">effect_value</span> is in 1-15 range, then vertex lighting is cyclically fading to more bright value. The lower the value is, the deeper the fade to full
   vertex lighting is. If <span class="monospaced">effect_value</span> is in 17-30 range (<em>not</em> 31!), then vertex lighting is cyclically fading to more dark value. The higher the value is, the
   deeper the fade to black is. If <span class="monospaced">effect_value</span> is 16 or 0, no effect is produced. So practically, <span class="monospaced">effect_value</span> serves as a multiplier to overall effect
@@ -3721,7 +3726,7 @@ boundaries as original room, but altered geometry and/or texturing. Detailed des
 </li>
 <li>
 <p>
-<strong>1</strong>&#8201;&#8212;&#8201;Produces flickering effect, with <span class="monospaced">effect_value</span> acting the same way&#8201;&#8212;&#8201;as intensity multiplier.
+<strong>3</strong>&#8201;&#8212;&#8201;If <span class="monospaced">sunset</span> gameflow script flag is set, rooms with this light type will gradually dim all lights for 20 minutes. This happens in Bartoli&#8217;s Hideout. Sunset state isn&#8217;t saved in savegames and will be reset on reload.
 </p>
 </li>
 </ul></div>
@@ -3747,7 +3752,7 @@ boundaries as original room, but altered geometry and/or texturing. Detailed des
     <span class="n">tr_room_sector</span> <span class="n">SectorList</span><span class="p">[</span><span class="n">NumXsectors</span> <span class="o">*</span> <span class="n">NumZsectors</span><span class="p">];</span>  <span class="c1">// List of sectors in this room</span>
 
     <span class="kt">int16_t</span> <span class="n">AmbientIntensity1</span><span class="p">;</span>  <span class="c1">// This and the next one only affect externally-lit objects</span>
-    <span class="kt">int16_t</span> <span class="n">AmbientIntensity2</span><span class="p">;</span>  <span class="c1">// Usually the same as AmbientIntensity1</span>
+    <span class="kt">int16_t</span> <span class="n">LightMode</span><span class="p">;</span>      <span class="c1">// Same as in TR2</span>
 
     <span class="kt">uint16_t</span> <span class="n">NumLights</span><span class="p">;</span>                 <span class="c1">// Number of point lights in this room</span>
     <span class="n">tr3_room_light</span> <span class="n">Lights</span><span class="p">[</span><span class="n">NumLights</span><span class="p">];</span>   <span class="c1">// List of point lights</span>
@@ -3764,6 +3769,7 @@ boundaries as original room, but altered geometry and/or texturing. Detailed des
     <span class="kt">uint8_t</span> <span class="n">Filler</span><span class="p">;</span>  <span class="c1">// Unused.</span>
 <span class="p">};</span>
 </pre></div></div></div>
+<div class="paragraph"><p><span class="monospaced">LightMode</span> types 1-2 are broken and produce aburpt "bumpy ceiling" effect. Type 3 (sunset) works the same as in TR2.</p></div>
 </div>
 <div class="sect3">
 <h4 id="_tr4_room_structure">3.4.4. TR4 Room Structure</h4>
@@ -6517,7 +6523,11 @@ this texture.</p></div>
 </li>
 <li>
 <p>
-<em>Bit 15</em>: if set, it indicates that texture is used on a triangle face.
+<em>Bit 15</em>: <span class="image">
+<img src="images/icons/tr4.png" alt="TR4 only" width="16" height="17" title="TR4 only">
+</span><span class="image">
+<img src="images/icons/tr5.png" alt="TR5 only" width="16" height="17" title="TR5 only">
+</span> if set, it indicates that texture is used on a triangle face.
 </p>
 </li>
 </ul></div>
@@ -13873,7 +13883,7 @@ width:100%;
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2019-08-28 07:29:59 RTZ 2 (зима)
+ 2020-05-10 19:48:21 MSK
 </div>
 </div>
 </body>
