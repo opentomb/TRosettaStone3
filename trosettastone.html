@@ -2072,7 +2072,7 @@ width:100%;
 <col style="width:1%;">
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2020-05-10)</strong></p></div>
+<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2020-05-11)</strong></p></div>
 <div class="paragraph"><p>Including Tomb Raider <span class="monospaced">.PHD/.TUB</span>, Tomb Raider II-III <span class="monospaced">.TR2</span>, Tomb Raider IV <span class="monospaced">.TR4</span> and Tomb Raider Chronicles (V) <span class="monospaced">.TRC</span> information, where available.</p></div>
 <div class="paragraph"><p>Also includes <span class="monospaced">TOMBPC.DAT</span> and <span class="monospaced">SCRIPT.TR4</span> script information, <span class="monospaced">CDAUDIO.WAD</span> and <span class="monospaced">CUTSEQ.PAK</span>/<span class="monospaced">CUTSEQ.BIN</span> information.</p></div></div></td>
 <td class="tableblock halign-right valign-middle" ><div><div class="paragraph"><p><span class="image">
@@ -3726,7 +3726,7 @@ boundaries as original room, but altered geometry and/or texturing. Detailed des
 </li>
 <li>
 <p>
-<strong>3</strong>&#8201;&#8212;&#8201;If <span class="monospaced">sunset</span> gameflow script flag is set, rooms with this light type will gradually dim all lights for 20 minutes. This happens in Bartoli&#8217;s Hideout. Sunset state isn&#8217;t saved in savegames and will be reset on reload.
+<strong>3</strong>&#8201;&#8212;&#8201;If <span class="monospaced">sunset</span> gameflow script opcode is set, rooms with this light type will gradually dim all lights for 20 minutes. This happens in Bartoli&#8217;s Hideout. Sunset state isn&#8217;t saved in savegames and will be reset on reload.
 </p>
 </li>
 </ul></div>
@@ -3769,7 +3769,7 @@ boundaries as original room, but altered geometry and/or texturing. Detailed des
     <span class="kt">uint8_t</span> <span class="n">Filler</span><span class="p">;</span>  <span class="c1">// Unused.</span>
 <span class="p">};</span>
 </pre></div></div></div>
-<div class="paragraph"><p><span class="monospaced">LightMode</span> types 1-2 are broken and produce aburpt "bumpy ceiling" effect. Type 3 (sunset) works the same as in TR2.</p></div>
+<div class="paragraph"><p><span class="monospaced">LightMode</span> types are broken and produce aburpt "bumpy ceiling" effect. It happens because internally same data field was reused for vertex waving effects (seen in quicksand and water rooms)</p></div>
 </div>
 <div class="sect3">
 <h4 id="_tr4_room_structure">3.4.4. TR4 Room Structure</h4>
@@ -8989,7 +8989,7 @@ higher than a <em>normal</em> level ID.</p></div>
 </li>
 <li>
 <p>
-11&#8201;&#8212;&#8201;<span class="monospaced">Sunset</span>&#8201;&#8212;&#8201;Unknown. Nothing changes in-game. Used in Bartoli&#8217;s Hideout. Maybe not-implemented ancestor of TR4 LensFlare?
+11&#8201;&#8212;&#8201;<span class="monospaced">Sunset</span>&#8201;&#8212;&#8201;Gradually dim all lights in rooms with <span class="monospaced">LightMode</span> set to <span class="monospaced">sunset</span>. Used in Bartoli&#8217;s Hideout.
 </p>
 </li>
 <li>
