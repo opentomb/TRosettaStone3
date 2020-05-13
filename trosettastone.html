@@ -2072,7 +2072,7 @@ width:100%;
 <col style="width:1%;">
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2020-05-11)</strong></p></div>
+<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2020-05-13)</strong></p></div>
 <div class="paragraph"><p>Including Tomb Raider <span class="monospaced">.PHD/.TUB</span>, Tomb Raider II-III <span class="monospaced">.TR2</span>, Tomb Raider IV <span class="monospaced">.TR4</span> and Tomb Raider Chronicles (V) <span class="monospaced">.TRC</span> information, where available.</p></div>
 <div class="paragraph"><p>Also includes <span class="monospaced">TOMBPC.DAT</span> and <span class="monospaced">SCRIPT.TR4</span> script information, <span class="monospaced">CDAUDIO.WAD</span> and <span class="monospaced">CUTSEQ.PAK</span>/<span class="monospaced">CUTSEQ.BIN</span> information.</p></div></div></td>
 <td class="tableblock halign-right valign-middle" ><div><div class="paragraph"><p><span class="image">
@@ -3069,19 +3069,41 @@ always black, so the number is pseudo-signed (negative values are always treated
 </div>
 <div class="sect4">
 <h5 id="_tr3_room_lighting">TR3 Room Lighting</h5>
+<div class="paragraph"><p>TR3 introduced a rudimentary &#8220;light type&#8221; concept. Although only possible types are sun (type 0) and point light (type 1). It is not clear how sun affetcts room lighting, but somehow it interpolates with all other light objects in a given room. Both light types are kept using the same structure, with two last 8 bytes used as union.</p></div>
 <div class="listingblock">
 <a id="tr3_room_light"></a>
 <div class="content"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">tr3_room_light</span>   <span class="c1">// 24 bytes</span>
 <span class="p">{</span>
         <span class="kt">int32_t</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">;</span>       <span class="c1">// Position of light, in world coordinates</span>
-     <span class="n">tr_colour4</span> <span class="n">Colour</span><span class="p">;</span>        <span class="c1">// Colour of the light</span>
-       <span class="kt">uint32_t</span> <span class="n">Intensity</span><span class="p">;</span>
-       <span class="kt">uint32_t</span> <span class="n">Fade</span><span class="p">;</span>          <span class="c1">// Falloff value</span>
+      <span class="n">tr_colour</span> <span class="n">Colour</span><span class="p">;</span>        <span class="c1">// Colour of the light</span>
+      <span class="kt">uint8_t</span> <span class="n">LightType</span><span class="p">;</span>     <span class="c1">// Only 2 types - sun and point lights</span>
+      <span class="k">union</span>          <span class="c1">// 8 bytes</span>
+      <span class="p">{</span>
+            <span class="n">tr3_room_spotlight</span><span class="p">;</span>
+            <span class="n">tr3_room_pointlight</span><span class="p">;</span>
+      <span class="p">}</span>
 <span class="p">};</span>
 </pre></div></div></div>
-<div class="paragraph"><p><span class="monospaced">Intensity</span> is the power of the light and ranges mainly from 0 (low power) to 0x1FFF (high power). Though, values greater than 0x1FFF do exist and their
-meanings are unknown. <span class="monospaced">Fade</span> is the distance max the light can shine on. Range is mainly from 0 to 0x7FFF, but negative values do exist and their meanings are
-unknown.</p></div>
+<div class="paragraph"><p>Depending on <span class="monospaced">LightType</span>, last 2 bytes are parsed differently:</p></div>
+<div class="listingblock">
+<a id="tr3_room_spotlight"></a>
+<div class="content"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">tr3_room_sun</span> <span class="c1">// 8 bytes</span>
+<span class="p">{</span>
+        <span class="kt">int16_t</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nz</span><span class="p">;</span> <span class="c1">// Normal?</span>
+        <span class="kt">int16_t</span> <span class="n">Unused</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div></div></div>
+<div class="paragraph"><p><span class="monospaced">nx</span>, <span class="monospaced">ny</span> and <span class="monospaced">nz</span> is most likely a normal.</p></div>
+<div class="listingblock">
+<a id="tr3_room_spotlight"></a>
+<div class="content"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">tr3_room_spotlight</span> <span class="c1">// 8 bytes</span>
+<span class="p">{</span>
+        <span class="kt">int32_t</span> <span class="n">Intensity</span><span class="p">;</span>
+        <span class="kt">int32_t</span> <span class="n">Fade</span><span class="p">;</span>   <span class="c1">// Falloff value</span>
+<span class="p">};</span>
+</pre></div></div></div>
+<div class="paragraph"><p><span class="monospaced">Intensity</span> is the power of the light and ranges mainly from 0 (low power) to 0x1FFF (high power).
+<span class="monospaced">Fade</span> is the distance max the light can shine on. Range is mainly from 0 to 0x7FFF.</p></div>
 </div>
 <div class="sect4">
 <h5 id="_tr4_room_lighting">TR4 Room Lighting</h5>
@@ -3104,7 +3126,7 @@ unknown.</p></div>
           <span class="kt">float</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">dz</span><span class="p">;</span>    <span class="c1">// Direction - used only by sun and spot lights</span>
 <span class="p">};</span>
 </pre></div></div></div>
-<div class="paragraph"><p><span class="monospaced">LightType</span> is somewhat similar to D3D light type, but there are some differences.</p></div>
+<div class="paragraph"><p><span class="monospaced">LightType</span> was extended and is now somewhat similar to D3D light type, but there are some differences.</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -3400,7 +3422,7 @@ we&#8217;ll define vertex structure for TR1-2, TR3-4 and TR5 independently.</p><
 <span class="p">};</span>
 </pre></div></div></div>
 <div class="paragraph"><p><span class="monospaced">Lighting</span> value is ignored by the engine, as now each vertex has its own defined 15-bit colour (see below).</p></div>
-<div class="paragraph"><p><span class="monospaced">Attributes</span> bit flags were extended. Here is the list:</p></div>
+<div class="paragraph"><p><span class="monospaced">Attributes</span> bit flags were extended. Also, old bits 0..4 aren&#8217;t working properly anymore, because effect lighting was broken in TR3. Here is the list of new flags:</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -3416,7 +3438,11 @@ we&#8217;ll define vertex structure for TR1-2, TR3-4 and TR5 independently.</p><
 </li>
 <li>
 <p>
-<em>Bit 15:</em> Same &#8220;wave&#8221; effect as with <em>Bit 13</em>, but without light effect (?).
+<em>Bit 15:</em> <span class="image">
+<img src="images/icons/tr4.png" alt="TR4 only" width="16" height="17" title="TR4 only">
+</span><span class="image">
+<img src="images/icons/tr5.png" alt="TR5 only" width="16" height="17" title="TR5 only">
+</span> Broken in these game versions. Instead, same &#8220;wave&#8221; effect is produced as with <em>Bit 13</em>, but with slightly less glow.
 </p>
 </li>
 </ul></div>
@@ -3751,8 +3777,8 @@ boundaries as original room, but altered geometry and/or texturing. Detailed des
     <span class="kt">uint16_t</span> <span class="n">NumXsectors</span><span class="p">;</span>                                  <span class="c1">// ``Height&#39;&#39; of sector list</span>
     <span class="n">tr_room_sector</span> <span class="n">SectorList</span><span class="p">[</span><span class="n">NumXsectors</span> <span class="o">*</span> <span class="n">NumZsectors</span><span class="p">];</span>  <span class="c1">// List of sectors in this room</span>
 
-    <span class="kt">int16_t</span> <span class="n">AmbientIntensity1</span><span class="p">;</span>  <span class="c1">// This and the next one only affect externally-lit objects</span>
-    <span class="kt">int16_t</span> <span class="n">LightMode</span><span class="p">;</span>      <span class="c1">// Same as in TR2</span>
+    <span class="kt">int16_t</span> <span class="n">AmbientIntensity</span><span class="p">;</span>   <span class="c1">// Affects externally-lit objects</span>
+    <span class="kt">int16_t</span> <span class="n">LightMode</span><span class="p">;</span>      <span class="c1">// Broken in this game version</span>
 
     <span class="kt">uint16_t</span> <span class="n">NumLights</span><span class="p">;</span>                 <span class="c1">// Number of point lights in this room</span>
     <span class="n">tr3_room_light</span> <span class="n">Lights</span><span class="p">[</span><span class="n">NumLights</span><span class="p">];</span>   <span class="c1">// List of point lights</span>
