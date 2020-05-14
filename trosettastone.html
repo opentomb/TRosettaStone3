@@ -2072,7 +2072,7 @@ width:100%;
 <col style="width:1%;">
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2020-05-13)</strong></p></div>
+<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2020-05-14)</strong></p></div>
 <div class="paragraph"><p>Including Tomb Raider <span class="monospaced">.PHD/.TUB</span>, Tomb Raider II-III <span class="monospaced">.TR2</span>, Tomb Raider IV <span class="monospaced">.TR4</span> and Tomb Raider Chronicles (V) <span class="monospaced">.TRC</span> information, where available.</p></div>
 <div class="paragraph"><p>Also includes <span class="monospaced">TOMBPC.DAT</span> and <span class="monospaced">SCRIPT.TR4</span> script information, <span class="monospaced">CDAUDIO.WAD</span> and <span class="monospaced">CUTSEQ.PAK</span>/<span class="monospaced">CUTSEQ.BIN</span> information.</p></div></div></td>
 <td class="tableblock halign-right valign-middle" ><div><div class="paragraph"><p><span class="image">
@@ -3084,9 +3084,9 @@ always black, so the number is pseudo-signed (negative values are always treated
       <span class="p">}</span>
 <span class="p">};</span>
 </pre></div></div></div>
-<div class="paragraph"><p>Depending on <span class="monospaced">LightType</span>, last 2 bytes are parsed differently:</p></div>
+<div class="paragraph"><p>Depending on <span class="monospaced">LightType</span>, last 8 bytes are parsed differently, either as <span class="monospaced">tr3_room_spotlight</span> or <span class="monospaced">tr3_toom_sun</span> structure:</p></div>
 <div class="listingblock">
-<a id="tr3_room_spotlight"></a>
+<a id="tr3_room_sun"></a>
 <div class="content"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">tr3_room_sun</span> <span class="c1">// 8 bytes</span>
 <span class="p">{</span>
         <span class="kt">int16_t</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nz</span><span class="p">;</span> <span class="c1">// Normal?</span>
