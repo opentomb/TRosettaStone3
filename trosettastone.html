@@ -2072,7 +2072,7 @@ width:100%;
 <col style="width:1%;">
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2020-05-14)</strong></p></div>
+<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2020-05-15)</strong></p></div>
 <div class="paragraph"><p>Including Tomb Raider <span class="monospaced">.PHD/.TUB</span>, Tomb Raider II-III <span class="monospaced">.TR2</span>, Tomb Raider IV <span class="monospaced">.TR4</span> and Tomb Raider Chronicles (V) <span class="monospaced">.TRC</span> information, where available.</p></div>
 <div class="paragraph"><p>Also includes <span class="monospaced">TOMBPC.DAT</span> and <span class="monospaced">SCRIPT.TR4</span> script information, <span class="monospaced">CDAUDIO.WAD</span> and <span class="monospaced">CUTSEQ.PAK</span>/<span class="monospaced">CUTSEQ.BIN</span> information.</p></div></div></td>
 <td class="tableblock halign-right valign-middle" ><div><div class="paragraph"><p><span class="image">
@@ -2209,11 +2209,6 @@ information will continue up to the next paragraph or list entry, until otherwis
 <div class="sect2">
 <h3 id="_current_unknowns">1.3. Current Unknowns</h3>
 <div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-Clarify the meaning of <em>Bit 4</em> in <a href="#tr2_room_vertex">[tr2_room_vertex]</a> structure.
-</p>
-</li>
 <li>
 <p>
 Clarify what&#8217;s the purpose of <span class="monospaced">Normal</span> field in <a href="#tr5_room_vertex">[tr5_room_vertex]</a> structure, and if really <span class="monospaced">Attributes</span> field was removed.
@@ -6498,8 +6493,10 @@ samples only. There is no way to tell <em>retail</em> version from <em>TRLE</em>
 <div class="sect2">
 <h3 id="_palette">9.2. Palette</h3>
 <div class="paragraph"><p>This consists of 256 <a href="#tr_colour">[tr_colour]</a> structs, one for each palette entry. However, the individual colour values range from 0 to 63; they must be multiplied by 4
-to get the correct values.</p></div>
-<div class="paragraph"><p>This used for all 8-bit colour, such as 8-bit textures.</p></div>
+to get the correct values. Palette is used for all 8-bit colour, such as 8-bit textures.</p></div>
+<div class="paragraph"><p><span class="image">
+<img src="images/icons/tr1.png" alt="TR1 only" width="16" height="17" title="TR1 only">
+</span> First entry in palette is treated as <em>transparent colour</em> used for textures with alpha testing. In later games, transparent colour was replaced by so-called &#8216;magenta transparency&#8217;, meaning that any pixel with red and blue values at maximum and green value at zero, is treated as completely transparent.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_object_textures">9.3. Object Textures</h3>
@@ -13909,7 +13906,7 @@ width:100%;
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2020-05-10 19:48:21 MSK
+ 2020-05-15 15:32:57 MSK
 </div>
 </div>
 </body>
