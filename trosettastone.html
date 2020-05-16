@@ -2072,7 +2072,7 @@ width:100%;
 <col style="width:1%;">
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2020-05-15)</strong></p></div>
+<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2020-05-16)</strong></p></div>
 <div class="paragraph"><p>Including Tomb Raider <span class="monospaced">.PHD/.TUB</span>, Tomb Raider II-III <span class="monospaced">.TR2</span>, Tomb Raider IV <span class="monospaced">.TR4</span> and Tomb Raider Chronicles (V) <span class="monospaced">.TRC</span> information, where available.</p></div>
 <div class="paragraph"><p>Also includes <span class="monospaced">TOMBPC.DAT</span> and <span class="monospaced">SCRIPT.TR4</span> script information, <span class="monospaced">CDAUDIO.WAD</span> and <span class="monospaced">CUTSEQ.PAK</span>/<span class="monospaced">CUTSEQ.BIN</span> information.</p></div></div></td>
 <td class="tableblock halign-right valign-middle" ><div><div class="paragraph"><p><span class="image">
@@ -3911,7 +3911,7 @@ Angel of Darkness</em> at the very same time.</td>
     <span class="kt">uint32_t</span> <span class="n">LightDataSize</span><span class="p">;</span>
     <span class="kt">uint32_t</span> <span class="n">NumLights2</span><span class="p">;</span>    <span class="c1">// Always same as NumLights</span>
 
-    <span class="kt">uint32_t</span> <span class="n">Unknown6</span><span class="p">;</span>
+    <span class="kt">uint32_t</span> <span class="n">Unknown6</span><span class="p">;</span>      <span class="c1">// If set, there is an unknown data after NumPortals</span>
 
     <span class="kt">int32_t</span> <span class="n">RoomYTop</span><span class="p">;</span>
     <span class="kt">int32_t</span> <span class="n">RoomYBottom</span><span class="p">;</span>
@@ -3928,6 +3928,7 @@ Angel of Darkness</em> at the very same time.</td>
     <span class="kt">uint32_t</span> <span class="n">Separator</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>  <span class="c1">// Always 0xCDCDCDCD</span>
 
     <span class="n">tr5_room_light</span> <span class="n">Lights</span><span class="p">[</span><span class="n">NumLights</span><span class="p">];</span>    <span class="c1">// Data for the lights (88 bytes * NumRoomLights)</span>
+    <span class="kt">uint8_t</span> <span class="n">Unknown</span><span class="p">[</span><span class="n">Unknown6</span> <span class="o">*</span> <span class="mi">36</span><span class="p">];</span>      <span class="c1">// Unknown data which exists whenever Unknown6 != 0</span>
     <span class="n">tr_room_sector</span> <span class="n">SectorList</span><span class="p">[</span><span class="n">NumXSectors</span> <span class="o">*</span> <span class="n">NumZSectors</span><span class="p">];</span> <span class="c1">// List of sectors in this room</span>
 
     <span class="kt">uint16_t</span> <span class="n">NumPortals</span><span class="p">;</span>                 <span class="c1">// Number of visibility portals to other rooms</span>
@@ -3956,7 +3957,7 @@ that this uint32_t could be equal to <span class="monospaced">0xFFFFFFFF</span>,
 <div class="paragraph"><p><span class="monospaced">NumRoomTriangles</span> and <span class="monospaced">NumRoomRectangles</span> are respectively the numbers of triangular and rectangular faces in a given room. <strong>NOTE:</strong> If room is <em>null room</em>,
 each of these values will be <span class="monospaced">0xCDCDCDCD</span>.</p></div>
 <div class="paragraph"><p><span class="monospaced">LightDataSize</span> is the size of the light data in bytes (<em>not</em> in <a href="#tr5_room_light">[tr5_room_light]</a> units).</p></div>
-<div class="paragraph"><p><span class="monospaced">Unknown6</span> could probably be a copy of <span class="monospaced">ReverbInfo</span> (see further), as its value usually ranges from 0 to 3.</p></div>
+<div class="paragraph"><p><span class="monospaced">Unknown6</span>, when set to anything but zero, creates an unknown data block of 36 bytes after <span class="monospaced">Lights</span> array.</p></div>
 <div class="paragraph"><p><span class="monospaced">RoomYTop</span> and <span class="monospaced">RoomYBottom</span> are equal to <span class="monospaced">yTop</span> and <span class="monospaced">yBottom</span> values in <a href="#tr_room_info">[tr_room_info]</a> structure. If room is a <em>null room</em>, both of these values are
 <span class="monospaced">0xCDCDCDCD</span>.</p></div>
 <div class="paragraph"><p><span class="monospaced">NumLayers</span> is a number of layers (volumes) in this room.</p></div>
@@ -4665,7 +4666,7 @@ at least in TR1 and TR4).</p></div>
 <li>
 <p>
 In TR3, if Lara approaches sector with this FloorData function inside <em>minecart</em> vehicle, it will turn <em>left</em> 90 degrees, with a circle radius around 4
-  sectors (4096 units in world coordinates).
+  sectors (4096 units in world coordinates). If both this and <span class="monospaced">0x15</span> functions are set for a given sector, minecart will <em>stop</em> there.
 </p>
 </li>
 <li>
@@ -4689,7 +4690,7 @@ In TR4 and TR5, this function is used together with special entity called <em>Tr
 <li>
 <p>
 In TR3, if Lara approaches sector with this FloorData function inside <em>minecart</em> vehicle, it will turn <em>right</em> 90 degrees, with a circle radius around 4
-  sectors (4096 units in world coordinates).
+  sectors (4096 units in world coordinates). If both this and <span class="monospaced">0x14</span> functions are set for a given sector, minecart will <em>stop</em> there.
 </p>
 </li>
 <li>
@@ -13906,7 +13907,7 @@ width:100%;
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2020-05-15 15:32:57 MSK
+ 2020-05-16 11:57:25 MSK
 </div>
 </div>
 </body>
