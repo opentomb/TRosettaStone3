@@ -2072,7 +2072,7 @@ width:100%;
 <col style="width:1%;">
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2020-05-16)</strong></p></div>
+<td class="tableblock halign-left valign-middle" ><div><div class="paragraph"><p><strong>Document Version 3.0 preview (last edit: 2020-06-25)</strong></p></div>
 <div class="paragraph"><p>Including Tomb Raider <span class="monospaced">.PHD/.TUB</span>, Tomb Raider II-III <span class="monospaced">.TR2</span>, Tomb Raider IV <span class="monospaced">.TR4</span> and Tomb Raider Chronicles (V) <span class="monospaced">.TRC</span> information, where available.</p></div>
 <div class="paragraph"><p>Also includes <span class="monospaced">TOMBPC.DAT</span> and <span class="monospaced">SCRIPT.TR4</span> script information, <span class="monospaced">CDAUDIO.WAD</span> and <span class="monospaced">CUTSEQ.PAK</span>/<span class="monospaced">CUTSEQ.BIN</span> information.</p></div></div></td>
 <td class="tableblock halign-right valign-middle" ><div><div class="paragraph"><p><span class="image">
@@ -3356,6 +3356,20 @@ $\mathnormal{LightDirectionVectorZ} = \cos(X) * \cos(Y)$
 </li>
 </ul></div>
 <div class="paragraph"><p><span class="monospaced">x2</span>, <span class="monospaced">y2</span>, <span class="monospaced">z2</span>, <span class="monospaced">dx2</span>, <span class="monospaced">dy2</span> and <span class="monospaced">dz2</span> values repeat previous corresponding information in long data types instead of floats.</p></div>
+<div class="paragraph"><p>Additionally, TR5 implements separate data structure for fog bulbs, which are kept separately from all other lights in room structure:</p></div>
+<div class="listingblock">
+<a id="tr5_fog_bulb"></a>
+<div class="content"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">tr5_fog_bulb</span>   <span class="c1">// 36 bytes</span>
+<span class="p">{</span>
+        <span class="kt">float</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">;</span>       <span class="c1">// Position of light, in world coordinates</span>
+        <span class="kt">float</span> <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>       <span class="c1">// Colour of the light</span>
+
+       <span class="kt">uint32_t</span> <span class="n">Separator</span>    <span class="c1">// Dummy value = 0xCDCDCDCD</span>
+
+        <span class="kt">float</span> <span class="n">In</span><span class="p">;</span>            <span class="c1">// Size of IN value</span>
+        <span class="kt">float</span> <span class="n">Out</span><span class="p">;</span>           <span class="c1">// Size of OUT value</span>
+<span class="p">};</span>
+</pre></div></div></div>
 </div>
 </div>
 <div class="sect3">
@@ -3906,29 +3920,34 @@ Angel of Darkness</em> at the very same time.</td>
     <span class="kt">uint32_t</span> <span class="n">NumRoomTriangles</span><span class="p">;</span>
     <span class="kt">uint32_t</span> <span class="n">NumRoomRectangles</span><span class="p">;</span>
 
-    <span class="kt">uint32_t</span> <span class="n">Separator</span><span class="p">;</span>     <span class="c1">// Always 0</span>
+    <span class="n">tr5_room_light</span><span class="o">*</span> <span class="n">RoomLights</span><span class="p">;</span> <span class="c1">// points to tr5_room_data.Lights</span>
+    <span class="n">tr5_fog_bulb</span><span class="o">*</span> <span class="n">FogBulbs</span><span class="p">;</span>     <span class="c1">// points to tr5_room_data.FogBulbs</span>
 
-    <span class="kt">uint32_t</span> <span class="n">LightDataSize</span><span class="p">;</span>
     <span class="kt">uint32_t</span> <span class="n">NumLights2</span><span class="p">;</span>    <span class="c1">// Always same as NumLights</span>
 
-    <span class="kt">uint32_t</span> <span class="n">Unknown6</span><span class="p">;</span>      <span class="c1">// If set, there is an unknown data after Lights</span>
+    <span class="kt">uint32_t</span> <span class="n">NumFogBulbs</span><span class="p">;</span>      <span class="c1">// If set, there is an unknown data after Lights</span>
 
     <span class="kt">int32_t</span> <span class="n">RoomYTop</span><span class="p">;</span>
     <span class="kt">int32_t</span> <span class="n">RoomYBottom</span><span class="p">;</span>
 
     <span class="kt">uint32_t</span> <span class="n">NumLayers</span><span class="p">;</span>
 
-    <span class="kt">uint32_t</span> <span class="n">LayerOffset</span><span class="p">;</span>
-    <span class="kt">uint32_t</span> <span class="n">VerticesOffset</span><span class="p">;</span>
+    <span class="n">tr5_room_layer</span><span class="o">*</span> <span class="n">LayerOffset</span><span class="p">;</span>    <span class="c1">// points to tr5_room_data.Layers</span>
+    <span class="n">tr5_room_vertex</span><span class="o">*</span> <span class="n">VerticesOffset</span><span class="p">;</span> <span class="c1">// points to tr5_room_data.Vertices</span>
     <span class="kt">uint32_t</span> <span class="n">PolyOffset</span><span class="p">;</span>
     <span class="kt">uint32_t</span> <span class="n">PolyOffset2</span><span class="p">;</span>   <span class="c1">// Same as PolyOffset</span>
 
     <span class="kt">uint32_t</span> <span class="n">NumVertices</span><span class="p">;</span>
 
     <span class="kt">uint32_t</span> <span class="n">Separator</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>  <span class="c1">// Always 0xCDCDCDCD</span>
+<span class="p">}</span>
 
+<span class="c1">// Immediately after previous block</span>
+
+<span class="k">virtual</span> <span class="k">struct</span> <span class="n">tr5_room_data</span>
+<span class="p">{</span>
     <span class="n">tr5_room_light</span> <span class="n">Lights</span><span class="p">[</span><span class="n">NumLights</span><span class="p">];</span>    <span class="c1">// Data for the lights (88 bytes * NumRoomLights)</span>
-    <span class="kt">uint8_t</span> <span class="n">Unknown</span><span class="p">[</span><span class="n">Unknown6</span> <span class="o">*</span> <span class="mi">36</span><span class="p">];</span>      <span class="c1">// Unknown data which exists whenever Unknown6 != 0</span>
+    <span class="n">tr5_fog_bulb</span> <span class="n">FogBulbs</span><span class="p">[</span><span class="n">NumFogBulbs</span><span class="p">];</span>  <span class="c1">// Data for the fog bulbs (36 bytes * NumFogBulbs)</span>
     <span class="n">tr_room_sector</span> <span class="n">SectorList</span><span class="p">[</span><span class="n">NumXSectors</span> <span class="o">*</span> <span class="n">NumZSectors</span><span class="p">];</span> <span class="c1">// List of sectors in this room</span>
 
     <span class="kt">uint16_t</span> <span class="n">NumPortals</span><span class="p">;</span>                 <span class="c1">// Number of visibility portals to other rooms</span>
@@ -3938,10 +3957,8 @@ Angel of Darkness</em> at the very same time.</td>
 
     <span class="n">tr3_room_staticmesh</span> <span class="n">StaticMeshes</span><span class="p">[</span><span class="n">NumStaticMeshes</span><span class="p">];</span>   <span class="c1">// List of static meshes</span>
 
-    <span class="n">tr5_room_layer</span><span class="p">[</span><span class="n">NumLayers</span><span class="p">];</span> <span class="c1">// Data for the room layers (volumes) (56 bytes * NumLayers)</span>
-
+    <span class="n">tr5_room_layer</span> <span class="n">Layers</span><span class="p">[</span><span class="n">NumLayers</span><span class="p">];</span> <span class="c1">// Data for the room layers (volumes) (56 bytes * NumLayers)</span>
     <span class="kt">uint8_t</span> <span class="n">Faces</span><span class="p">[(</span><span class="n">NumRoomRectangles</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">tr_face4</span><span class="p">)</span> <span class="o">+</span> <span class="n">NumRoomTriangles</span> <span class="o">*</span> <span class="p">(</span><span class="n">tr_face3</span><span class="p">)];</span>
-
     <span class="n">tr5_room_vertex</span> <span class="n">Vertices</span><span class="p">[</span><span class="n">NumVertices</span><span class="p">];</span>
 <span class="p">}</span>
 </pre></div></div></div>
@@ -3957,14 +3974,13 @@ that this uint32_t could be equal to <span class="monospaced">0xFFFFFFFF</span>,
 <div class="paragraph"><p><span class="monospaced">NumRoomTriangles</span> and <span class="monospaced">NumRoomRectangles</span> are respectively the numbers of triangular and rectangular faces in a given room. <strong>NOTE:</strong> If room is <em>null room</em>,
 each of these values will be <span class="monospaced">0xCDCDCDCD</span>.</p></div>
 <div class="paragraph"><p><span class="monospaced">LightDataSize</span> is the size of the light data in bytes (<em>not</em> in <a href="#tr5_room_light">[tr5_room_light]</a> units).</p></div>
-<div class="paragraph"><p><span class="monospaced">Unknown6</span>, when set to anything but zero, creates an unknown data block of 36 bytes after <span class="monospaced">Lights</span> array.</p></div>
 <div class="paragraph"><p><span class="monospaced">RoomYTop</span> and <span class="monospaced">RoomYBottom</span> are equal to <span class="monospaced">yTop</span> and <span class="monospaced">yBottom</span> values in <a href="#tr_room_info">[tr_room_info]</a> structure. If room is a <em>null room</em>, both of these values are
 <span class="monospaced">0xCDCDCDCD</span>.</p></div>
 <div class="paragraph"><p><span class="monospaced">NumLayers</span> is a number of layers (volumes) in this room.</p></div>
 <div class="paragraph"><p><span class="monospaced">LayerOffset</span>: this number <span class="monospaced">+216</span> will give you an offset from the start of the room data to the start of the layer data.</p></div>
 <div class="paragraph"><p><span class="monospaced">VerticesOffset</span>: this number <span class="monospaced">+216</span> will give you an offset from the start of the room data to the start of the verex data.</p></div>
 <div class="paragraph"><p><span class="monospaced">PolyOffset</span>: this number <span class="monospaced">+216</span> will give you an offset from the start of the room data to the start of the rectangle/triangle data.</p></div>
-<div class="paragraph"><p><span class="monospaced">VerticesSize</span> is the size of vertex data block in bytes. Therefore, it <em>must</em> be a multiple of <a href="#tr5_room_vertex">[tr5_room_vertex]</a> size, else it means the block size is wrong.</p></div>
+<div class="paragraph"><p><span class="monospaced">NumVertices</span> is the size of vertex data block in bytes. Therefore, it <em>must</em> be a multiple of <a href="#tr5_room_vertex">[tr5_room_vertex]</a> size, else it means the block size is wrong.</p></div>
 <div class="paragraph"><p><span class="monospaced">Faces</span> is a sequential data array for the room polygons (both <a href="#tr_face4">[tr_face4]</a> and <a href="#tr_face3">[tr_face3]</a>),</p></div>
 <div class="admonitionblock">
 <table><tr>
@@ -5263,8 +5279,7 @@ and the latter is used for collision testing.</p></div>
 <img src="images/icons/tr1.png" alt="TR1 only" width="16" height="17" title="TR1 only">
 </span><span class="image">
 <img src="images/icons/tr2.png" alt="TR2 only" width="16" height="17" title="TR2 only">
-</span> <span class="monospaced">Flags</span> value is usually 2, and is 3 for static meshes <em>without collision</em>, like plants and lying skeletons. Since TR3, value is ignored, and
-no-collision mode is obtained using degenerate collision box (with all-zero or all-one coordinates).</p></div>
+</span> In <span class="monospaced">Flags</span> field, bit 1 is usually set, which means static mesh is visible. Bit 0 is also set for static meshes <em>without collision</em>, like plants and lying skeletons. Since TR3, value is ignored, and no-collision mode is obtained using degenerate collision box (with all-zero or all-one coordinates).</p></div>
 </div>
 <div class="sect2">
 <h3 id="_models">5.4. Models</h3>
